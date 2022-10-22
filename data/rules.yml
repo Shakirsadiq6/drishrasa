@@ -2,18 +2,18 @@ version: "2.0"
 
 rules:
 
-- rule: Say goodbye anytime the user says goodbye
+- rule: Activate form
   steps:
-  - intent: goodbye
-  - action: utter_goodbye
+  - intent: request_names
+  - action: name_form
+  - active_loop: name_form
 
-- rule: Say 'I am a bot' anytime the user challenges
+- rule: Submit form
+  condition:
+  - active_loop: name_form
   steps:
-  - intent: bot_challenge
-  - action: utter_iamabot
-
-- rule: Say `hello` when the user starts a conversation with intent `greet
-  conversation_start: false
-  steps:
-  - intent: greet
-  - action: utter_greet
+  - action: name_form
+  - active_loop: null
+  - slot_was_set:
+    - requested_slot: null
+  - action: utter_submit

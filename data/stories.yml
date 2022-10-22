@@ -2,25 +2,258 @@ version: "2.0"
 
 stories:
 
-- story: happy icu vacant beds path
+- story: interactive_story_1
   steps:
-  - intent: affirm
-  - action: utter_beds_type
+  - intent: iagree
+  - action: action_iagree
+  - action: name_form
+  - active_loop: name_form
+  - slot_was_set:
+    - requested_slot: first_name
+  - slot_was_set:
+    - first_name: shakir
+  - slot_was_set:
+    - requested_slot: phone_number
+  - slot_was_set:
+    - phone_number: 0876432363
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: utter_submit
 
-- story: happy non icu vacant beds path
+- story: first path
   steps:
-  - intent: ICU_Vacant_beds
-  - action: utter_sure
-  - action: action_check_vacant_beds
-
-- story: happy non icu vacant beds path
-  steps:
-  - intent: Non_ICU_Vacant_beds
-  - action: utter_sure
-  - action: action_check_non_icu_vacant_beds
-
-- story: deny path
-  steps:
-  - intent: deny
+  - intent: welcome_message
+  - action: action_welcome_message
+  - intent: usingchatbot
+  - action: utter_usingchatbot
+  - intent: yesiam
+  - action: utter_yesiam
+  - intent: contactsales
+  - action: action_contactsales
+  - intent: iagree
+  - action: action_iagree
+  - intent: phone_number
+  - action: action_phonenumber
+  - intent: goodbye
   - action: utter_goodbye
 
+- story: second path
+  steps:
+  - intent: welcome_message
+  - action: action_welcome_message
+  - intent: usingchatbot
+  - action: utter_usingchatbot
+  - intent: nonotyet
+  - action: utter_nonotyet
+  - intent: contactsales
+  - action: action_contactsales
+  - intent: iagree
+  - action: action_iagree
+  - intent: phone_number
+  - action: action_phonenumber
+  - intent: goodbye
+  - action: utter_goodbye
+
+- story: third path
+  steps:
+  - intent: welcome_message
+  - action: action_welcome_message
+  - intent: ihavequestions
+  - action: action_ihavequestions
+  - intent: contactsales
+  - action: action_contactsales
+  - intent: iagree
+  - action: action_iagree
+  - intent: phone_number
+  - action: action_phonenumber
+  - intent: goodbye
+  - action: utter_goodbye
+
+- story: fourth path
+  steps:
+  - intent: welcome_message
+  - action: action_welcome_message
+  - intent: justbrowsing
+  - action: action_justbrowsing
+  - intent: goodbye
+  - action: utter_goodbye
+
+- story: fifth path
+  steps:
+  - intent: welcome_message
+  - action: action_welcome_message
+  - intent: integrations
+  - action: action_integrations
+  - intent: main_menu
+  - action: action_ihavequestions
+  - intent: goodbye
+  - action: utter_goodbye
+
+- story: sixth path
+  steps:
+  - intent: welcome_message
+  - action: action_welcome_message
+  - intent: contactus
+  - action: action_contactus
+  - intent: goodbye
+  - action: utter_goodbye
+
+- story: sixth path
+  steps:
+  - intent: welcome_message
+  - action: action_welcome_message
+  - intent: ihavequestions
+  - action: action_ihavequestions
+  - intent: goodbye
+  - action: utter_goodbye
+
+- story: seventh path
+  steps:
+  - intent: welcome_message
+  - action: action_welcome_message
+  - intent: phone_number
+  - action: action_phonenumber
+  - intent: email
+  - action: action_email_user
+  - action: action_email
+  - intent: main_menu
+  - action: action_ihavequestions
+  - intent: goodbye
+  - action: utter_goodbye
+
+- story: eighth path
+  steps:
+  - intent: welcome_message
+  - action: action_welcome_message
+  - intent: features
+  - action: action_features
+  - intent: goodbye
+  - action: utter_goodbye
+
+- story: ninth path
+  steps:
+  - intent: welcome_message
+  - action: action_welcome_message
+  - intent: features
+  - action: action_features
+  - intent: conversationalui
+  - action: action_conversationalui
+  - intent: main_menu
+  - action: action_ihavequestions
+  - intent: goodbye
+  - action: utter_goodbye
+
+- story: tenth path
+  steps:
+  - intent: welcome_message
+  - action: action_welcome_message
+  - intent: features
+  - action: action_features
+  - intent: growsrevenue
+  - action: action_growthrevenue
+  - intent: main_menu
+  - action: action_ihavequestions
+  - intent: goodbye
+  - action: utter_goodbye
+
+- story: eleventh path
+  steps:
+  - intent: welcome_message
+  - action: action_welcome_message
+  - intent: features
+  - action: action_features
+  - intent: improvecustomeracquisition
+  - action: action_customeracquisition
+  - intent: main_menu
+  - action: action_ihavequestions
+  - intent: goodbye
+  - action: utter_goodbye
+  - intent: gobacktofeatures
+  - action: action_features
+
+- story: twelveth path
+  steps:
+  - intent: welcome_message
+  - action: action_welcome_message
+  - intent: privacypolicy
+  - action: action_privacypolicy
+  - intent: goodbye
+  - action: utter_goodbye
+
+- story: thirteenth path
+  steps:
+  - intent: privacypolicy
+  - action: action_privacypolicy
+
+- story: thirteenth path
+  steps:
+  - intent: justbrowsing
+  - action: action_justbrowsing
+
+- story: fourteenth path
+  steps:
+  - intent: ihavequestions
+  - action: action_ihavequestions
+
+- story: fifteenth path
+  steps:
+  - intent: growsrevenue
+  - action: action_growthrevenue
+  - intent: main_menu
+  - action: action_ihavequestions
+
+- story: sixteenth path
+  steps:
+  - intent: conversationalui
+  - action: action_conversationalui
+  - intent: main_menu
+  - action: action_ihavequestions
+  - intent: gobacktofeatures
+  - action: action_features
+
+- story: sixteenth path
+  steps:
+  - intent: improvecustomeracquisition
+  - action: action_customeracquisition
+  - intent: main_menu
+  - action: action_ihavequestions
+
+- story: seventeenth path
+  steps:
+  - intent: features
+  - action: action_features
+
+- story: eighteenth path
+  steps:
+  - intent: contactus
+  - action: action_contactus
+
+- story: nineteeth path
+  steps:
+  - intent: gobacktofeatures
+  - action: action_features
+
+- story: twentieth path
+  steps:
+  - intent: phone_number
+  - action: action_phonenumber
+  - intent: email
+  - action: action_email_user
+  - action: action_email
+
+- story: twentyfirst path
+  steps:
+  - intent: welcome_message
+  - action: action_welcome_message
+  - intent: idontagree
+  - action: action_idontagree
+  - intent: main_menu
+  - action: action_ihavequestions
+  - intent: goodbye
+  - action: utter_goodbye
+
+- story: twentysecond path
+  steps:
+    - intent: phone_number
+    - action: action_phonenumber

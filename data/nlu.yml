@@ -1,7 +1,23 @@
 version: "2.0"
 
 nlu:
-- intent: greet
+- regex: mobile_number
+  examples: |
+    - \d{10,12}
+- intent: phone_number
+  examples: |
+    - my phone number is [1234567891](mobile_number)
+    - This is my phone number [1234567891](mobile_number)
+    - [9781357438](number)
+    - [7894841693](number)
+    - [5698423876](number)
+    - [2457846106](number)
+    - [3659884085](number)
+    - [4298989817](number)
+    - [1032878789](number)
+    - [0218579876](number)
+
+- intent: welcome_message
   examples: |
     - hey
     - hello
@@ -17,6 +33,97 @@ nlu:
     - goodevening
     - good afternoon
 
+- intent: main_menu
+  examples: |
+    - 👈 Go to main menu
+    - main menu
+    - Go to main menu
+
+- intent: usingchatbot
+  examples: |
+    - Using chatbot 👉
+    - Using chatbot
+
+- intent: yesiam
+  examples: |
+    - 👍 Yes, I am
+    - Yes, I am
+    - Yes, I'm
+    - Yes
+
+- intent: nonotyet
+  examples: |
+    - 👎 No, not yet
+    - No, not yet
+    - not yet
+    - No
+
+- intent: ihavequestions
+  examples: |
+    - I have questions 🙂
+    - I have questions
+
+- intent: justbrowsing
+  examples: |
+    - Just browsing 🙄 
+    - Just browsing
+
+- intent: contactsales
+  examples: |
+    - 🤝Contact sales
+    - Contact sales
+    - 🤔 I have changed my mind
+    - I have changed my mind
+
+- intent: iagree
+  examples: |
+    - 👍 I agree
+    - I agree
+
+- intent: idontagree
+  examples: |
+    - 👎 I do not agree
+    - I do not agree
+
+- intent: integrations
+  examples: |
+    - ⚙ Integrations
+    - Integrations
+
+- intent: contactus
+  examples: |
+    - 📧 Contact us
+    - Contact us
+    - Reach us
+    - 📧 Reach us
+
+- intent: features
+  examples: |
+    - 🚀 Features
+    - Features
+
+- intent: conversationalui
+  examples: |
+    - Conversational UI
+
+- intent: growsrevenue
+  examples: |
+    - Grows Revenue
+
+- intent: privacypolicy
+  examples: |
+    - 📃 Privacy policy
+    - Privacy policy
+
+- intent: improvecustomeracquisition
+  examples: |
+    - Improve customer acquisition
+
+- intent: gobacktofeatures
+  examples: |
+    - 🔙 Go back to features
+    - Go back to features
+
 - intent: goodbye
   examples: |
     - good afternoon
@@ -31,76 +138,19 @@ nlu:
     - bye bye
     - see you later
 
-- intent: affirm
+- intent: email
   examples: |
-    - yes
-    - y
-    - indeed
-    - of course
-    - that sounds good
-    - correct
+    - email's [john@email.com](email)
+    - email: [david@email.com](email)
+    - My email is [barbara@email.com](email)
+    - [susan@email.com](email)
+    - My email is [fred@email.com](email)
+    - [test@email.com](email)
+    - [drish@email.com](email)
 
-- intent: deny
+- intent: request_names
   examples: |
-    - no
-    - n
-    - never
-    - I don't think so
-    - don't like that
-    - no way
-    - not really
-
-- intent: mood_great
-  examples: |
-    - perfect
-    - great
-    - amazing
-    - feeling like a king
-    - wonderful
-    - I am feeling very good
-    - I am great
-    - I am amazing
-    - I am going to save the world
-    - super stoked
-    - extremely good
-    - so so perfect
-    - so good
-    - so perfect
-
-- intent: mood_unhappy
-  examples: |
-    - my day was horrible
-    - I am sad
-    - I don't feel very well
-    - I am disappointed
-    - super sad
-    - I'm so sad
-    - sad
-    - very sad
-    - unhappy
-    - not good
-    - not very good
-    - extremly sad
-    - so saad
-    - so sad
-
-- intent: bot_challenge
-  examples: |
-    - are you a bot?
-    - are you a human?
-    - am I talking to a bot?
-    - am I talking to a human?
-
-- intent: ICU_Vacant_beds
-  examples: |
-    - I'm looking for ICU vacant beds.
-    - just looking for ICU vacant beds.
-    - i want icu vacant beds
-
-- intent: Non_ICU_Vacant_beds
-  examples: |
-    - I'm looking for Non ICU vacant beds.
-    - just looking for Non ICU vacant beds.
-    - i need non icu vacant beds
-
-
+    - i want to give you my name
+    - give name
+    - you need to know my name
+    - do you know my name?
